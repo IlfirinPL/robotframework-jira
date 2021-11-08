@@ -23,7 +23,7 @@ Installation
 Usage
 -----
 
-`JIRALibrary keyword
+JIRALibrary keyword
 documentation TODO
 
 
