@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 from setuptools import setup
 
-short_description = "Robot Framework wrapper for jira, interactions with jira jira"
+short_description = "Robot Framework wrapper for JIRA using atlassian-python-api"
 try:
     description = open("README.rst").read()
 except IOError:
@@ -34,7 +34,7 @@ setup(
     download_url="https://pypi.python.org/pypi/robotframework-jira",
     keywords=("robotframework testing jira"),  # arbitrary keywords
     install_requires=["atlassian-python-api", "robotframework", "wrapt"],
-    long_description=description,
+    long_description=short_description,
     license="MIT",
     classifiers=classifiers,
     platforms="any",

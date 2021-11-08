@@ -26,8 +26,6 @@ Usage
 JIRALibrary keyword
 documentation TODO
 
-
-
 Contribute
 ----------
 
