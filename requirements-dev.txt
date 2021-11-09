@@ -1,7 +1,5 @@
 -e .
 bumpversion
-flake8
-pre-commit
+pylint
 prospector
-tox
 -r requirements.txt
