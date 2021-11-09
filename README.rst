@@ -8,7 +8,7 @@ robotframework-jira
 
 
 Robot Framework keyword library wrapper for
-`atlassian-python-api <https://atlassian-python-api.readthedocs.io/jira.html>`__.
+`atlassian-python-api <https://atlassian-python-api.readthedocs.io/jira.html>`__
 
 This module allows easy use of JIRA's functions
 
