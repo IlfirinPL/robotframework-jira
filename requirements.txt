@@ -1,3 +1,0 @@
-atlassian-python-api
-robotframework
-wrapt

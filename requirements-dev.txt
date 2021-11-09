@@ -1,7 +1,0 @@
--e .
-bumpversion
-flake8
-pre-commit
-prospector
-tox
--r requirements.txt
