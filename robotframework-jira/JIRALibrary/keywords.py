@@ -7,8 +7,6 @@ methods via JIRALibrary calls in Robot Framework.
 # pylint: disable=no-value-for-parameter,unused-argument,useless-object-inheritance
 import ast
 
-# import jira
-# from jira import JIRA
 from atlassian import Jira
 from pprint import pprint
 import wrapt
@@ -55,8 +53,7 @@ class JIRAKeywords(object):
 
     def connect_to_jira(self, url=None, username=None, password=None, **kwargs):
         """
-        ${URL}      Set Variable    https://localhost:443/jira
-        Connect To Jira    ${URL}    user   password
+        Connect To Jira    https://localhost:443/jira    user   password
         Full list of arguments https://atlassian-python-api.readthedocs.io/index.html
         """
         self._session = Jira(url=url, username=username, password=password, **kwargs)

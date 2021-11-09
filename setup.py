@@ -26,7 +26,7 @@ setup(
     name="robotframework-jira",
     package_dir={"": "robotframework-jira"},
     packages=["JIRALibrary"],  # this must be the same as the name above
-    version="0.0.1",
+    version="0.0.2",
     description=short_description,
     author="Marcin Koperski",
     author_email="marcin.koperski+github@gmail.com",
@@ -34,7 +34,7 @@ setup(
     download_url="https://pypi.python.org/pypi/robotframework-jira",
     keywords=("robotframework testing jira"),  # arbitrary keywords
     install_requires=["atlassian-python-api", "robotframework", "wrapt"],
-    long_description=short_description,
+    long_description=description,
     license="MIT",
     classifiers=classifiers,
     platforms="any",
