@@ -22,7 +22,9 @@ Framework homepage! <http://robotframework.org/>`__
 Installation
 ------------
 
-``pip install robotframework-jira``
+.. code:: shell
+    
+    pip install robotframework-jira
 
 Usage
 -----
