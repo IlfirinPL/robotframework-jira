@@ -47,6 +47,9 @@ documentation <https://ilfirinpl.github.io/robotframework-jira/>`_
         ${session}    Connect To Jira    ${URL}    ${USER}    ${PASS}   verify_ssl=${False}
         ${projects}    Projects    ${session}
         Log Dictionary  ${projects}   WARN
+    Add Comment to Issue
+         ${session}    Connect To Jira    ${URL}    ${USER}    ${PASS}
+         Issue Add Comment    ${session}    JIRAID-1234    My long comment !
 
 Contribute
 ----------
