@@ -1,9 +1,11 @@
 #!/usr/bin/env python
+# pylint: disable=consider-using-with,missing-module-docstring
 from setuptools import setup
+
 
 SHORT_DESCRIPTION = "Robot Framework wrapper for JIRA using atlassian-python-api"
 try:
-    DESCRIPTION = open("README.rst").read()
+    DESCRIPTION = open("README.rst", encoding="utf-8").read()
 except IOError:
     DESCRIPTION = SHORT_DESCRIPTION
 
