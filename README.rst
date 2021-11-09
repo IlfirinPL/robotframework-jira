@@ -1,6 +1,10 @@
 robotframework-jira
 ====================
 
+.. image:: https://img.shields.io/pypi/v/robotframework-jira.svg
+    :target: https://pypi.python.org/pypi/robotframework-jira
+.. image:: https://img.shields.io/pypi/l/robotframework-jira.svg
+    :target: https://pypi.python.org/pypi/robotframework-jira
 
 
 Robot Framework keyword library wrapper for
@@ -23,8 +27,26 @@ Installation
 Usage
 -----
 
-JIRALibrary keyword
-documentation TODO
+`JIRALibrary keywords
+documentation <https://ilfirinpl.github.io/robotframework-jira/>`_
+
+
+.. code:: robotframework
+
+    *** Settings ***
+    Library           JIRALibrary
+    
+    *** Test Cases ***
+    Connect To JIRA
+        ${session}    Connect To Jira    ${URL}    ${USER}    ${PASS}
+        ${projects}    Projects    ${session}
+        Log Dictionary  ${projects}   WARN
+
+    Connect To JIRA And Skip SSL Check
+        Evaluate    urllib3.disable_warnings()
+        ${session}    Connect To Jira    ${URL}    ${USER}    ${PASS}   verify_ssl=${False}
+        ${projects}    Projects    ${session}
+        Log Dictionary  ${projects}   WARN
 
 Contribute
 ----------
