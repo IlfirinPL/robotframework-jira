@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 from setuptools import setup
 
-short_description = "Robot Framework wrapper for JIRA using atlassian-python-api"
+SHORT_DESCRIPTION = "Robot Framework wrapper for JIRA using atlassian-python-api"
 try:
-    description = open("README.rst").read()
+    DESCRIPTION = open("README.rst").read()
 except IOError:
-    description = short_description
+    DESCRIPTION = SHORT_DESCRIPTION
 
 
 classifiers = """
@@ -27,14 +27,14 @@ setup(
     package_dir={"": "robotframework-jira"},
     packages=["JIRALibrary"],  # this must be the same as the name above
     version="0.0.2",
-    description=short_description,
+    description=SHORT_DESCRIPTION,
     author="Marcin Koperski",
     author_email="marcin.koperski+github@gmail.com",
     url="https://github.com/IlfirinPL/robotframework-jira",
     download_url="https://pypi.python.org/pypi/robotframework-jira",
     keywords=("robotframework testing jira"),  # arbitrary keywords
     install_requires=["atlassian-python-api", "robotframework", "wrapt"],
-    long_description=description,
+    long_description=DESCRIPTION,
     license="MIT",
     classifiers=classifiers,
     platforms="any",

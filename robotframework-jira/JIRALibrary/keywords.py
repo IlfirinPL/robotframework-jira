@@ -4,11 +4,10 @@ This is a very thin wrapper for jira. You can access all of jira's usual
 methods via JIRALibrary calls in Robot Framework.
 
 """
-# pylint: disable=no-value-for-parameter,unused-argument,useless-object-inheritance
+# pylint: disable=no-value-for-parameter,unused-argument,useless-object-inheritance,broad-except,consider-iterating-dictionary
 import ast
 
 from atlassian import Jira
-from pprint import pprint
 import wrapt
 from robot.api import logger
 
@@ -21,10 +20,10 @@ def _str_to_data(string):
 
 
 @wrapt.decorator
-def _str_vars_to_data(f, instance, args, kwargs):
+def _str_vars_to_data(function, instance, args, kwargs):
     args = [_str_to_data(arg) for arg in args]
     kwargs = dict((arg_name, _str_to_data(arg)) for arg_name, arg in kwargs.items())
-    result = f(*args, **kwargs)
+    result = function(*args, **kwargs)
     return result
 
 
@@ -39,6 +38,9 @@ class JIRAKeywords(object):
     _session = None
 
     def get_keyword_names(self):
+        """
+        Generate List of keywords from jira lib
+        """
         keywords = [
             name
             for name, function in self._jira.__dict__.items()
@@ -67,4 +69,4 @@ class JIRAKeywords(object):
 
         if func:
             return _str_vars_to_data(func)
-        raise AttributeError('Non-existing keyword "{0}"'.format(name))
+        raise AttributeError("Non-existing keyword " + name)

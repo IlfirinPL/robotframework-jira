@@ -1,3 +1,10 @@
+"""
+
+This is a very thin wrapper for jira. You can access all of jira's usual
+methods via JIRALibrary calls in Robot Framework.
+
+"""
+# pylint: disable=invalid-name,empty-docstring
 import pkg_resources
 from .keywords import JIRAKeywords
 
