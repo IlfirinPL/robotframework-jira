@@ -26,9 +26,9 @@ Topic :: Software Development :: Quality Assurance
 
 setup(
     name="robotframework-jira",
-    package_dir={"": "robotframework-jira"},
+    package_dir={"": "robotframework_jira"},
     packages=["JIRALibrary"],  # this must be the same as the name above
-    version="0.0.2",
+    version="0.0.3",
     description=SHORT_DESCRIPTION,
     author="Marcin Koperski",
     author_email="marcin.koperski+github@gmail.com",

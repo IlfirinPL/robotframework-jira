@@ -7,8 +7,8 @@ methods via JIRALibrary calls in Robot Framework.
 # pylint: disable=no-value-for-parameter,unused-argument,useless-object-inheritance,broad-except,consider-iterating-dictionary
 import ast
 
-from atlassian import Jira
 import wrapt
+from atlassian import Jira
 from robot.api import logger
 
 
