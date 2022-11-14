@@ -36,23 +36,32 @@ documentation <https://ilfirinpl.github.io/robotframework-jira/>`_
 .. code:: robotframework
 
     *** Settings ***
-    Library           JIRALibrary
-    
+    Library     Collections
+    Library     JIRALibrary
+
+
+    *** Variables ***
+    ${URL}      https://jira.com
+    ${USER}     mytestid
+    ${PASS}     myPass
+
+
     *** Test Cases ***
     Connect To JIRA
         ${session}    Connect To Jira    ${URL}    ${USER}    ${PASS}
         ${projects}    Projects    ${session}
-        Log Dictionary  ${projects}   WARN
+        Log Dictionary    ${projects}    WARN
 
     Connect To JIRA And Skip SSL Check
         Evaluate    urllib3.disable_warnings()
-        ${session}    Connect To Jira    ${URL}    ${USER}    ${PASS}   verify_ssl=${False}
+        ${session}    Connect To Jira    ${URL}    ${USER}    ${PASS}    verify_ssl=${False}
         ${projects}    Projects    ${session}
-        Log Dictionary  ${projects}   WARN
-        
+        Log Dictionary    ${projects}    WARN
+
     Add Comment to Issue
-         ${session}    Connect To Jira    ${URL}    ${USER}    ${PASS}
-         Issue Add Comment    ${session}    JIRAID-1234    My long comment !
+        ${session}    Connect To Jira    ${URL}    ${USER}    ${PASS}
+        Issue Add Comment    ${session}    JIRAID-1234    My long comment !
+
 
 Contribute
 ----------
