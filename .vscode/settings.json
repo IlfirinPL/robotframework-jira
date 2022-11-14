@@ -2,7 +2,16 @@
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
     "cSpell.words": [
+        "bdist",
         "Pylint",
-        "remotelinks"
+        "pypi",
+        "remotelinks",
+        "sdist",
+        "setuptools"
+    ],
+    "robot.lint.ignoreEnvironmentVariables": [
+        "USER",
+        "URL",
+        "PASS"
     ],
 }
