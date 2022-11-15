@@ -23,7 +23,7 @@ Installation
 ------------
 
 .. code:: shell
-    
+
     pip install robotframework-jira
 
 Usage
@@ -42,7 +42,7 @@ documentation <https://ilfirinpl.github.io/robotframework-jira/>`_
 
     *** Variables ***
     ${URL}      https://jira.com
-    ${USER}     mytestid
+    ${USER}     myUser
     ${PASS}     myPass
 
 
@@ -55,8 +55,10 @@ documentation <https://ilfirinpl.github.io/robotframework-jira/>`_
     Connect To JIRA And Skip SSL Check
         Evaluate    urllib3.disable_warnings()
         ${session}    Connect To Jira    ${URL}    ${USER}    ${PASS}    verify_ssl=${False}
-        ${projects}    Projects    ${session}
-        Log Dictionary    ${projects}    WARN
+
+        ${dict}    Get Server Info    ${session}
+        Log To Console    Server Info
+        Log Dictionary    ${dict}    WARN
 
     Add Comment to Issue
         ${session}    Connect To Jira    ${URL}    ${USER}    ${PASS}
